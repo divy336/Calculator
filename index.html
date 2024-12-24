@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calculator</h1>
+        <input type="text" class="values" readonly>
+        <div class="buttons">
+            <input type="button" class="btn" value="+" onclick="appendInput('+')" style="background-color: #080808; color: white; font-size: large;"></button>
+            <input type="button" class="btn" value="1" onclick="appendInput('1')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" class="btn" value="2" onclick="appendInput('2')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="3" class="btn" onclick="appendInput('3')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="/" class="btn" onclick="appendInput('/')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="4" class="btn" onclick="appendInput('4')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="5" class="btn" onclick="appendInput('5')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="6" class="btn" onclick="appendInput('6')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="-" class="btn" onclick="appendInput('-')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="7" class="btn" onclick="appendInput('7')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="8" class="btn" onclick="appendInput('8')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="9" class="btn" onclick="appendInput('9')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="*" class="btn" onclick="appendInput('*')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="0" class="btn" onclick="appendInput('0')" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="." class="btn" onclick="document.querySelector('.values').value = courent=courent+'.';" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="=" class="btn" onclick="
+            
+            document.querySelector('.values').value = eval(courent);" style="background-color:orangered; font-size: larger;"></button>
+
+            <input type="button" value="C" class="btn2" onclick="
+            courent='';
+            document.querySelector('.values').value =courent;" style="background-color: #080808;color: white; font-size: large;"></button>
+            <input type="button" value="<--" class="btn1" onclick="remove()" style="background-color: #080808;color: white; font-size: large;"></button>
+            <h2>Nagar's</h2>
+        </div>
+    </div>
+
+    <script>
+        let courent = '';
+
+        document.querySelector('.values').value = courent;
+        document.querySelector('.btn1');
+
+
+
+        function remove() {
+            courent = courent.slice(0, -1);
+
+            document.querySelector('.values').value = courent;
+        }
+
+        function appendInput(values) {
+            if (["+", "-", "/", "*", ].includes(values) && courent === "") {
+                return;
+            }
+            if (["+", "-", "/", "*"].includes(values) && ["+", "-", "/", "*"].includes(courent.slice(-1))) {
+                return;
+            }
+            courent = courent + values;
+            document.querySelector('.values').value = courent;
+
+
+        }
+    </script>
+
+</html>
